@@ -115,7 +115,12 @@
 
         <service
             android:name="com.termux.app.TermuxService"
-            android:exported="true" />
+           android:exported="true"
+            android:permission="com.termux.permission.TERMUX_SERVICE">
+            <intent-filter>
+                <action android:name="com.termux.service_execute" />
+            </intent-filter>
+        </service>
 
         <receiver android:name=".app.TermuxOpenReceiver" />
 
